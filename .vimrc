@@ -13,6 +13,12 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+autocmd FileType tex nnoremap <buffer> <C-Space> :w<CR> <bar> :!latexmk -pdf %<CR><CR>
+
+" just having log means there is a delay when moving right by pressing 'l'
+" hence the weird §
+map §log :new ~/Dropbox/Uni/PhD/log.md<CR>
+
 " let g:vimtex_view_method='skim'
 
 " Disable showing warnings and errors in quickfix window.
@@ -33,6 +39,8 @@ set smartcase
 set incsearch
 set number
 
+set mouse=
+
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=2
@@ -43,12 +51,14 @@ set expandtab
 
 " autocmd FileType tex nmap <buffer> <C-Space> :w<CR> <bar> :!latexmk -pdf %<CR><CR>
 
-nmap <buffer> <C-Space> :w<CR> <bar> :!latexmk -pdf %<CR><CR>
 
 colorscheme onehalfdark
 
 " This removes the scrollbars in MacVim
 set guioptions=
+
+" no visual bell or flash
+set vb t_vb=
 
 set autochdir
 set guifont=Monaco:h13
