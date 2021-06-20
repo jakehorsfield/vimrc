@@ -18,6 +18,7 @@ autocmd FileType tex nnoremap <buffer> <C-Space> :w<CR> <bar> :!latexmk -pdf %<C
 " just having log means there is a delay when moving right by pressing 'l'
 " hence the weird §
 map §log :new ~/Dropbox/Uni/PhD/log.md<CR>
+map <C-[> :nohl<CR>
 
 " let g:vimtex_view_method='skim'
 
@@ -38,6 +39,7 @@ set ignorecase
 set smartcase
 set incsearch
 set number
+set hlsearch
 
 set mouse=
 
